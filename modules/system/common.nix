@@ -1,15 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "Nix-Framework";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Paris";
@@ -37,4 +31,3 @@
   # Do not change or delete this line
   system.stateVersion = "24.11";
 }
-

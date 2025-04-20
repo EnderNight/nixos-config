@@ -10,22 +10,24 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.Nix-Framework = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./nixos/configuration.nix
+    nixosConfigurations = {
+      laptop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/laptop/configuration.nix
 
-	home-manager.nixosModules.home-manager {
-	  home-manager = {
-	    useGlobalPkgs = true;
-	    useUserPackages = true;
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
 
-	    backupFileExtension = "backup";
+              backupFileExtension = "backup";
 
-	    users.matheo = import ./home-manager/home.nix;
-	  };
-	}
-      ];
+              users.matheo = import ./home/home.nix;
+            };
+          }
+        ];
+      };
     };
   };
 }
