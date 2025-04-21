@@ -1,23 +1,30 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./systemd-boot.nix
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-    ./network-manager.nix
+  networking.networkmanager.enable = true;
 
-    ./region.nix
-  ];
+  time.timeZone = "Europe/Paris";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    supportedLocales = [
+      "en_US.UTF-8/UTF-8"
+      "fr_FR.UTF-8/UTF-8"
+    ];
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  
   environment.systemPackages = with pkgs; [
     neovim
     git
     tree
     fastfetch
   ];
-
+  
   # Do not change or delete this line
   system.stateVersion = "24.11";
 }
+
