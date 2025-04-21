@@ -5,7 +5,6 @@
     settings = 
     let
       mainMod = "SUPER";
-      uwsm = argv: "uwsm app -- ${argv}";
     in
     {
       monitor = "desc:BOE 0x0BCA, preferred, auto, 1.333333";
@@ -24,9 +23,13 @@
         workspace_swipe = true;
       };
 
+      exec-once = [
+        "systemctl --user start hyprpolkitagent"
+      ];
+
       bind = [
-	"${mainMod}, Return, exec, ${uwsm "kitty"}"
-	"${mainMod}, F, exec, ${uwsm "firefox"}"
+	"${mainMod}, Return, exec, kitty"
+	"${mainMod}, F, exec, firefox"
 	"${mainMod}, C, killactive,"
 	"${mainMod}, M, exit,"
 
