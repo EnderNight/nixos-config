@@ -5,7 +5,9 @@
     [
       ./hardware-configuration.nix
 
-      ../../modules/system.nix
+      ../../modules/common.nix
+
+      ../../users/matheo/default.nix
     ];
 
   networking.hostName = "laptop";

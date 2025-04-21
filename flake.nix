@@ -23,7 +23,7 @@
 
               backupFileExtension = "backup";
 
-              users.matheo = import ./home/home.nix;
+              users.matheo = import ./users/matheo/home.nix;
             };
           }
         ];

@@ -1,17 +1,14 @@
 { pkgs, ... }:
 
 {
+# TODO: Split config into system, etc...
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Paris";
-
-  users.users.matheo = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
