@@ -1,11 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
     [
-      ../../modules/hardware/laptop.nix
+      ./hardware-configuration.nix
 
-      ../../modules/system/common.nix
+      ../../modules/system.nix
     ];
 
   networking.hostName = "laptop";
