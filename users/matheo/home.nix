@@ -15,5 +15,6 @@
     ../../modules/home/fish.nix
     ../../modules/home/starship.nix
     ../../modules/home/eza.nix
+    ../../modules/home/zoxide.nix
   ];
 }
