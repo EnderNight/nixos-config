@@ -6,7 +6,7 @@
 
     ./networking/nm.nix
 
-    ./region/timezone.nix
+    ./region.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -15,6 +15,7 @@
     neovim
     git
     tree
+    fastfetch
   ];
 
   # Do not change or delete this line
