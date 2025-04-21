@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/nixos/wm/hyprland.nix
+    ../../modules/nixos/de/kde.nix
   ];
 
   users.users.matheo = {

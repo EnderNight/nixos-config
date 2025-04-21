@@ -9,9 +9,7 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ../../modules/home/hyprland
     ../../modules/home/firefox
-    ../../modules/home/dunst
     ../../modules/home/kitty
   ];
 }
