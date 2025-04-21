@@ -14,5 +14,6 @@
     ../../modules/home/kitty.nix
     ../../modules/home/fish.nix
     ../../modules/home/starship.nix
+    ../../modules/home/eza.nix
   ];
 }
