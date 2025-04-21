@@ -23,6 +23,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    tree
   ];
 
   # Do not change or delete this line
