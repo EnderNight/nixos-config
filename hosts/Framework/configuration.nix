@@ -10,6 +10,6 @@
       ../../users/matheo/system.nix
     ];
 
-  networking.hostName = "laptop";
+  networking.hostName = "Framework";
 }
 

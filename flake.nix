@@ -10,7 +10,8 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }:
-    let homeConfig = 
+    let homeConfig = [
+      home-manager.nixosModules.home-manager
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -20,18 +21,15 @@
 
           users.matheo = import ./users/matheo/home.nix;
         };
-      };
+      }
+      ];
     in
     {
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
+        Framework = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [
-            ./hosts/laptop/configuration.nix
-
-            home-manager.nixosModules.home-manager
-
-	    homeConfig
+          modules = homeConfig ++ [
+            ./hosts/Framework/configuration.nix
           ];
         };
       };

@@ -10,7 +10,9 @@
 
   imports = [
     ../../modules/home/firefox.nix
-    ../../modules/home/fish.nix
+
     ../../modules/home/kitty.nix
+    ../../modules/home/fish.nix
+    ../../modules/home/starship.nix
   ];
 }
