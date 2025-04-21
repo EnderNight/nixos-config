@@ -12,18 +12,22 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  programs = {
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-    };
-    firefox.enable = true;
+  security.rtkit.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
   };
 
   environment.systemPackages = with pkgs; [
     neovim
     git
-    tree
   ];
 
   # Do not change or delete this line

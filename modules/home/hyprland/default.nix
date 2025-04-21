@@ -1,7 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  home.sessionVariables.NIXOS_OZONE_WL = "1";
+  home = {
+    sessionVariables.NIXOS_OZONE_WL = "1";
+
+    packages = with pkgs; [
+      xdg-desktop-portal-gtk
+      hyprpolkitagent
+    ];
+  };
 
   programs.bash = {
     enable = true;
@@ -14,15 +21,29 @@
 
   programs.kitty.enable = true;
 
+  programs.firefox.enable = true;
+
+  services = {
+    dunst = {
+      enable = true;
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = false; # uwsm
 
     settings = 
     let
       mainMod = "SUPER";
+      uwsm = argv: "uwsm app -- ${argv}";
     in
     {
       monitor = "desc:BOE 0x0BCA, preferred, auto, 1.333333";
+
+      xwayland = {
+        force_zero_scaling = true;
+      };
 
       misc = {
         disable_hyprland_logo = true;
@@ -35,8 +56,8 @@
       };
 
       bind = [
-	"${mainMod}, Return, exec, kitty"
-	"${mainMod}, F, exec, firefox"
+	"${mainMod}, Return, exec, ${uwsm "kitty"}"
+	"${mainMod}, F, exec, ${uwsm "firefox"}"
 	"${mainMod}, C, killactive,"
 	"${mainMod}, M, exit,"
 

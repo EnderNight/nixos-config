@@ -9,6 +9,6 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ../../home/hyprland.nix
+    ../../modules/home/hyprland
   ];
 }
