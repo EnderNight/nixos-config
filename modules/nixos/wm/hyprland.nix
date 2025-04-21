@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -10,4 +10,9 @@
     enable = true;
     withUWSM = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    xdg-desktop-portal-gtk
+    hyprpolkitagent
+  ];
 }

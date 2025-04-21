@@ -3,7 +3,6 @@
 {
   imports = [
     ./config.nix
-    ./packages.nix
   ];
 
   wayland.windowManager.hyprland = {
