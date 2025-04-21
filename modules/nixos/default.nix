@@ -1,33 +1,20 @@
 { pkgs, ... }:
 
 {
-# TODO: Split config into system, etc...
+  imports = [
+    ./boot/systemd-boot.nix
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+    ./networking/nm.nix
 
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "Europe/Paris";
+    ./region/timezone.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  security.rtkit.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-  };
 
   environment.systemPackages = with pkgs; [
     neovim
     git
+    tree
   ];
 
   # Do not change or delete this line

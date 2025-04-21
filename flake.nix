@@ -9,25 +9,31 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations = {
-      laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/laptop
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let homeConfig = 
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
 
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
+            backupFileExtension = "backup";
 
-              backupFileExtension = "backup";
+            users.matheo = import ./users/matheo/home.nix;
+          };
+        };
+    in
+    {
+      nixosConfigurations = {
+        laptop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/laptop
 
-              users.matheo = import ./users/matheo/home.nix;
-            };
-          }
-        ];
+            home-manager.nixosModules.home-manager  	
+
+	    homeConfig
+          ];
+        };
       };
     };
-  };
 }
