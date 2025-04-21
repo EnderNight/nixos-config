@@ -17,5 +17,7 @@
     ../../modules/home/eza.nix
     ../../modules/home/zoxide.nix
     ../../modules/home/bat.nix
+
+    ../../modules/home/git.nix
   ];
 }
