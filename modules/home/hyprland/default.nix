@@ -3,12 +3,7 @@
 {
   imports = [
     ./config.nix
-
-    ../firefox
-
-    ../kitty
-
-    ../dunst
+    ./packages.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -16,13 +11,5 @@
     systemd.enable = false; # uwsm
   };
 
-  home = {
-    sessionVariables.NIXOS_OZONE_WL = "1";
-
-    packages = with pkgs; [
-      xdg-desktop-portal-gtk
-      hyprpolkitagent
-    ];
-  };
-
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
 }
