@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./boot/systemd-boot.nix
+    ./systemd-boot.nix
 
-    ./networking/nm.nix
+    ./network-manager.nix
 
     ./region.nix
   ];

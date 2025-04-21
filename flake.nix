@@ -9,27 +9,27 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }:
     let homeConfig = 
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
 
-            backupFileExtension = "backup";
+          backupFileExtension = "backup";
 
-            users.matheo = import ./users/matheo/home.nix;
-          };
+          users.matheo = import ./users/matheo/home.nix;
         };
+      };
     in
     {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./hosts/laptop
+            ./hosts/laptop/configuration.nix
 
-            home-manager.nixosModules.home-manager  	
+            home-manager.nixosModules.home-manager
 
 	    homeConfig
           ];

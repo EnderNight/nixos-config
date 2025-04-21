@@ -9,7 +9,8 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ../../modules/home/firefox
-    ../../modules/home/kitty
+    ../../modules/home/firefox.nix
+    ../../modules/home/fish.nix
+    ../../modules/home/kitty.nix
   ];
 }

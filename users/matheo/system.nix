@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/nixos/de/kde.nix
+    ../../modules/system/plasma.nix
   ];
 
   users.users.matheo = {
