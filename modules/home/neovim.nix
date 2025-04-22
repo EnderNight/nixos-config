@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   programs.neovim = {
@@ -8,4 +8,6 @@
     vimAlias = true;
     vimdiffAlias = true;
   };
+
+  xdg.configFile."nvim".source = inputs.nvim-config.configDir;
 }

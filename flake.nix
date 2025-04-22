@@ -3,13 +3,16 @@
 
   inputs = {
     nixpkgs.url = github:NixOS/nixpkgs/nixos-24.11;
+
     home-manager = {
       url = github:nix-community/home-manager/release-24.11;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvim-config.url = github:EnderNight/nvim-config/nix-config;
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, nvim-config, ... }@inputs:
     let homeConfig = [
       home-manager.nixosModules.home-manager
       {
@@ -18,6 +21,8 @@
           useUserPackages = true;
 
           backupFileExtension = "backup";
+
+	  extraSpecialArgs = { inherit inputs; };
 
           users.matheo = import ./users/matheo/home.nix;
         };
