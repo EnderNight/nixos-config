@@ -21,5 +21,7 @@
     ../../modules/home/git.nix
 
     ../../modules/home/neovim.nix
+
+    ../../modules/home/games
   ];
 }
