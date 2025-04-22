@@ -11,4 +11,4 @@ Personal NixOS config.
 - [ ] Add ssh-keygen support
 - [ ] Add ssh-agent support
 - [ ] Add neovim config
-- [ ] Finish Hyprland config
+- [ ] Add plasma-manager

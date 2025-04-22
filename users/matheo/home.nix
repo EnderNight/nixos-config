@@ -19,5 +19,7 @@
     ../../modules/home/bat.nix
 
     ../../modules/home/git.nix
+
+    ../../modules/home/neovim.nix
   ];
 }
