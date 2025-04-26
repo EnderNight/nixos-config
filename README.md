@@ -8,7 +8,14 @@ Personal NixOS config.
 
 ## TODO
 
-- [ ] Add ssh-keygen support
-- [ ] Add ssh-agent support
-- [ ] Add neovim config
-- [ ] Add plasma-manager
+- Add ssh-agent support
+- Add neovim config
+- Add git config
+- Add cryptsetup and btrfs
+- Add plasma-manager
+- Add de apps (vlc, obs, gimp, ...)
+- Refactor home modules
+- Refactor system modules
+- Add games
+- Add more cli apps (glow, ripgrep, fzf, etc...)
+- Add flake templates for projects (C, C++, Rust, OCaml, Python, etc...)
