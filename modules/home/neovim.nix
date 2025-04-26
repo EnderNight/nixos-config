@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   programs.neovim = {
@@ -10,4 +10,9 @@
   };
 
   xdg.configFile."nvim".source = inputs.nvim-config.configDir;
+
+  home.packages = with pkgs; [
+    ripgrep
+    wl-clipboard
+  ];
 }
