@@ -2,6 +2,6 @@
 
 {
   programs.ssh = {
-    startAgent = true;
+    addKeysToAgent = "yes";
   };
 }

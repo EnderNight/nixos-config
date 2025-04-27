@@ -9,6 +9,8 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ../../modules/home/ssh.nix
+
     ../../modules/home/firefox.nix
 
     ../../modules/home/kitty.nix

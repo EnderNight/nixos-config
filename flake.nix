@@ -25,6 +25,7 @@
     let
       homeConfig = [
         home-manager.nixosModules.home-manager
+
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -32,7 +33,7 @@
 
             backupFileExtension = "backup";
 
-	    extraSpecialArgs = { inherit inputs; };
+            extraSpecialArgs = { inherit inputs; };
 
             users.matheo = import ./users/matheo/home.nix;
           };
@@ -48,5 +49,7 @@
           ];
         };
       };
+
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
     };
 }
