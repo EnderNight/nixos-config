@@ -4,219 +4,219 @@
   programs.starship = {
     enable = true;
     settings = {
-  aws = {
-symbol = "  ";
-};
+      aws = {
+        symbol = "  ";
+      };
 
-  buf = {
-symbol = " ";
-};
+      buf = {
+        symbol = " ";
+      };
 
-  c = {
-symbol = " ";
-};
+      c = {
+        symbol = " ";
+      };
 
-  conda = {
-symbol = " ";
-};
+      conda = {
+        symbol = " ";
+      };
 
-  crystal = {
-symbol = " ";
-};
+      crystal = {
+        symbol = " ";
+      };
 
-  dart = {
-symbol = " ";
-};
+      dart = {
+        symbol = " ";
+      };
 
-  directory = {
-read_only = " 󰌾";
-};
+      directory = {
+        read_only = " 󰌾";
+      };
 
-  docker_context = {
-symbol = " ";
-};
+      docker_context = {
+        symbol = " ";
+      };
 
-  elixir = {
-symbol = " ";
-};
+      elixir = {
+        symbol = " ";
+      };
 
-  elm = {
-symbol = " ";
-};
+      elm = {
+        symbol = " ";
+      };
 
-  fennel = {
-symbol = " ";
-};
+      fennel = {
+        symbol = " ";
+      };
 
-  fossil_branch = {
-symbol = " ";
-};
+      fossil_branch = {
+        symbol = " ";
+      };
 
-  git_branch = {
-symbol = " ";
-};
+      git_branch = {
+        symbol = " ";
+      };
 
-  git_commit = {
-tag_symbol = "  ";
-};
+      git_commit = {
+        tag_symbol = "  ";
+      };
 
-  golang = {
-symbol = " ";
-};
+      golang = {
+        symbol = " ";
+      };
 
-  guix_shell = {
-symbol = " ";
-};
+      guix_shell = {
+        symbol = " ";
+      };
 
-  haskell = {
-symbol = " ";
-};
+      haskell = {
+        symbol = " ";
+      };
 
-  haxe = {
-symbol = " ";
-};
+      haxe = {
+        symbol = " ";
+      };
 
-  hg_branch = {
-symbol = " ";
-};
+      hg_branch = {
+        symbol = " ";
+      };
 
-  hostname = {
-ssh_symbol = " ";
-};
+      hostname = {
+        ssh_symbol = " ";
+      };
 
-  java = {
-symbol = " ";
-};
+      java = {
+        symbol = " ";
+      };
 
-  julia = {
-symbol = " ";
-};
+      julia = {
+        symbol = " ";
+      };
 
-  kotlin = {
-symbol = " ";
-};
+      kotlin = {
+        symbol = " ";
+      };
 
-  lua = {
-symbol = " ";
-};
+      lua = {
+        symbol = " ";
+      };
 
-  memory_usage = {
-symbol = "󰍛 ";
-};
+      memory_usage = {
+        symbol = "󰍛 ";
+      };
 
-  meson = {
-symbol = "󰔷 ";
-};
+      meson = {
+        symbol = "󰔷 ";
+      };
 
-  nim = {
-symbol = "󰆥 ";
-};
+      nim = {
+        symbol = "󰆥 ";
+      };
 
-  nix_shell = {
-symbol = " ";
-};
+      nix_shell = {
+        symbol = " ";
+      };
 
-  nodejs = {
-symbol = " ";
-};
+      nodejs = {
+        symbol = " ";
+      };
 
-  ocaml = {
-symbol = " ";
-};
+      ocaml = {
+        symbol = " ";
+      };
 
-  os.symbols = {
-Alpaquita = " ";
-Alpine = " ";
-AlmaLinux = " ";
-Amazon = " ";
-Android = " ";
-Arch = " ";
-Artix = " ";
-CentOS = " ";
-Debian = " ";
-DragonFly = " ";
-Emscripten = " ";
-EndeavourOS = " ";
-Fedora = " ";
-FreeBSD = " ";
-Garuda = "󰛓 ";
-Gentoo = " ";
-HardenedBSD = "󰞌 ";
-Illumos = "󰈸 ";
-Kali = " ";
-Linux = " ";
-Mabox = " ";
-Macos = " ";
-Manjaro = " ";
-Mariner = " ";
-MidnightBSD = " ";
-Mint = " ";
-NetBSD = " ";
-NixOS = " ";
-OpenBSD = "󰈺 ";
-openSUSE = " ";
-OracleLinux = "󰌷 ";
-Pop = " ";
-Raspbian = " ";
-Redhat = " ";
-RedHatEnterprise = " ";
-RockyLinux = " ";
-Redox = "󰀘 ";
-Solus = "󰠳 ";
-SUSE = " ";
-Ubuntu = " ";
-Unknown = " ";
-Void = " ";
-Windows = "󰍲 ";
-};
+      os.symbols = {
+        Alpaquita = " ";
+        Alpine = " ";
+        AlmaLinux = " ";
+        Amazon = " ";
+        Android = " ";
+        Arch = " ";
+        Artix = " ";
+        CentOS = " ";
+        Debian = " ";
+        DragonFly = " ";
+        Emscripten = " ";
+        EndeavourOS = " ";
+        Fedora = " ";
+        FreeBSD = " ";
+        Garuda = "󰛓 ";
+        Gentoo = " ";
+        HardenedBSD = "󰞌 ";
+        Illumos = "󰈸 ";
+        Kali = " ";
+        Linux = " ";
+        Mabox = " ";
+        Macos = " ";
+        Manjaro = " ";
+        Mariner = " ";
+        MidnightBSD = " ";
+        Mint = " ";
+        NetBSD = " ";
+        NixOS = " ";
+        OpenBSD = "󰈺 ";
+        openSUSE = " ";
+        OracleLinux = "󰌷 ";
+        Pop = " ";
+        Raspbian = " ";
+        Redhat = " ";
+        RedHatEnterprise = " ";
+        RockyLinux = " ";
+        Redox = "󰀘 ";
+        Solus = "󰠳 ";
+        SUSE = " ";
+        Ubuntu = " ";
+        Unknown = " ";
+        Void = " ";
+        Windows = "󰍲 ";
+      };
 
-  package = {
-symbol = "󰏗 ";
-};
+      package = {
+        symbol = "󰏗 ";
+      };
 
-  perl = {
-symbol = " ";
-};
+      perl = {
+        symbol = " ";
+      };
 
-  php = {
-symbol = " ";
-};
+      php = {
+        symbol = " ";
+      };
 
-  pijul_channel = {
-symbol = " ";
-};
+      pijul_channel = {
+        symbol = " ";
+      };
 
-  python = {
-symbol = " ";
-};
+      python = {
+        symbol = " ";
+      };
 
-  rlang = {
-symbol = "󰟔 ";
-};
+      rlang = {
+        symbol = "󰟔 ";
+      };
 
-  ruby = {
-symbol = " ";
-};
+      ruby = {
+        symbol = " ";
+      };
 
-  rust = {
-symbol = "󱘗 ";
-};
+      rust = {
+        symbol = "󱘗 ";
+      };
 
-  scala = {
-symbol = " ";
-};
+      scala = {
+        symbol = " ";
+      };
 
-  swift = {
-symbol = " ";
-};
+      swift = {
+        symbol = " ";
+      };
 
-  zig = {
-symbol = " ";
-};
+      zig = {
+        symbol = " ";
+      };
 
-  gradle = {
-symbol = " ";
-};
+      gradle = {
+        symbol = " ";
+      };
     };
   };
 

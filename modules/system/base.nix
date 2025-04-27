@@ -15,7 +15,10 @@
     ];
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   environment.systemPackages = with pkgs; [
     neovim
@@ -29,4 +32,3 @@
   # Do not change or delete this line
   system.stateVersion = "24.11";
 }
-
