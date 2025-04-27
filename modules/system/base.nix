@@ -27,8 +27,6 @@
     fastfetch
   ];
 
-  programs.ssh.startAgent = true;
-
   # Do not change or delete this line
   system.stateVersion = "24.11";
 }

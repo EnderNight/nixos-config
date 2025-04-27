@@ -4,6 +4,8 @@
   imports = [
     ../../modules/system/plasma.nix
 
+    ../../modules/system/ssh.nix
+
     ../../modules/system/fonts.nix
   ];
 
