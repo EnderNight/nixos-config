@@ -4,6 +4,6 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
 
-    ./init.nix
+    ./config/init.nix
   ];
 }
