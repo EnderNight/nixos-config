@@ -12,6 +12,7 @@
       query
       markdown
       markdown_inline
+      regex
       nix
     ];
 
