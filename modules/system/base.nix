@@ -16,14 +16,16 @@
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+
   environment.systemPackages = with pkgs; [
     neovim
     git
     tree
     fastfetch
   ];
-  
+
+  programs.ssh.startAgent = true;
+
   # Do not change or delete this line
   system.stateVersion = "24.11";
 }

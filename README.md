@@ -8,7 +8,6 @@ Personal NixOS config.
 
 ## TODO
 
-- Add ssh-agent support
 - Add neovim config
 - Add git config
 - Add cryptsetup and btrfs
