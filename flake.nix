@@ -8,8 +8,6 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nvim-config.url = "github:EnderNight/nvim-config";
   };
 
   outputs =
@@ -17,7 +15,6 @@
       self,
       nixpkgs,
       home-manager,
-      nvim-config,
       ...
     }@inputs:
     let

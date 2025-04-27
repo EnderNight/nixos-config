@@ -37,26 +37,10 @@
         "type": "github"
       }
     },
-    "nvim-config": {
-      "locked": {
-        "lastModified": 1745726113,
-        "narHash": "sha256-XlSe1ACAsKjikzJpchALliY6SDP2O2uTvyRxLDfQ+Vo=",
-        "owner": "EnderNight",
-        "repo": "nvim-config",
-        "rev": "49c59ff2ac2f45d11f395f3dc53f2101efbab21a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "EnderNight",
-        "repo": "nvim-config",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "nvim-config": "nvim-config"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
