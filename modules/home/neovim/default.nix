@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -6,4 +6,13 @@
 
     ./config/init.nix
   ];
+
+  programs.nixvim = {
+    enable = true;
+
+    extraPackages = with pkgs; [
+      ripgrep
+      wl-clipboard
+    ];
+  };
 }

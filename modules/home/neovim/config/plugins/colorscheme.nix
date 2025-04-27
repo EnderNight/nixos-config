@@ -1,19 +1,17 @@
 { ... }:
 
 {
-  programs.nixvim = {
-    colorschemes = {
-      onedark = {
-        enable = true;
+  programs.nixvim.colorschemes = {
+    onedark = {
+      enable = true;
 
-	settings = {
-	  style = "darker";
+      settings = {
+        style = "darker";
 
-	  code_style = {
-	    functions = "bold";
-	    keywords = "bold";
-	  };
-	};
+        code_style = {
+          functions = "bold";
+          keywords = "bold";
+        };
       };
     };
   };
