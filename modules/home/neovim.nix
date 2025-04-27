@@ -14,5 +14,6 @@
   home.packages = with pkgs; [
     ripgrep
     wl-clipboard
+    luarocks
   ];
 }
