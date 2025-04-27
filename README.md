@@ -16,6 +16,5 @@ Personal NixOS config.
 - Refactor home modules
 - Refactor system modules
 - Add games
-- Add more cli apps (glow, ripgrep, fzf, etc...)
+- Add more cli apps (yazi, glow, ripgrep, fzf, etc...)
 - Add flake templates for projects (C, C++, Rust, OCaml, Python, etc...)
-- Add fonts
