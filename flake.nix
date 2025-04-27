@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvim-config.url = "github:EnderNight/nvim-config/nix-config";
+    nvim-config.url = "github:EnderNight/nvim-config";
   };
 
   outputs =
