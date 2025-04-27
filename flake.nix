@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -27,7 +32,7 @@
 
             backupFileExtension = "backup";
 
-            extraSpecialArgs = { inherit inputs; };
+	    extraSpecialArgs = { inherit inputs; };
 
             users.matheo = import ./users/matheo/home.nix;
           };
@@ -43,6 +48,5 @@
           ];
         };
       };
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
     };
 }
