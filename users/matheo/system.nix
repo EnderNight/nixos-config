@@ -7,6 +7,8 @@
     ../../modules/system/ssh.nix
 
     ../../modules/system/fonts.nix
+
+    ../../modules/system/services/distrobox.nix
   ];
 
   users.users.matheo = {
