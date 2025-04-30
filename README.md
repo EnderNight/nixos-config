@@ -18,3 +18,4 @@ Personal NixOS config.
 - Add games
 - Add more cli apps (yazi, glow, ripgrep, fzf, etc...)
 - Add flake templates for projects (C, C++, Rust, OCaml, Python, etc...)
+- Add Framework configs [here](https://github.com/NixOS/nixos-hardware/tree/master/framework)
