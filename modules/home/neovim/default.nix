@@ -7,12 +7,7 @@
     ./config/init.nix
   ];
 
-  programs.neovim = {
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-  };
+  home.sessionVariables.EDITOR = "nvim";
 
   programs.nixvim = {
     enable = true;
