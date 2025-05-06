@@ -11,5 +11,6 @@
     ./stacer.nix
     ./discord.nix
     ./handbrake.nix
+    ./obsidian.nix
   ];
 }
