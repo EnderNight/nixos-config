@@ -7,6 +7,13 @@
     ./config/init.nix
   ];
 
+  programs.neovim = {
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+  };
+
   programs.nixvim = {
     enable = true;
 

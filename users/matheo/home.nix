@@ -20,6 +20,7 @@
     ../../modules/home/zoxide.nix
     ../../modules/home/bat.nix
     ../../modules/home/yazi.nix
+    ../../modules/home/glow.nix
 
     ../../modules/home/git.nix
 
