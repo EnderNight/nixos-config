@@ -12,5 +12,7 @@
     ./discord.nix
     ./handbrake.nix
     ./obsidian.nix
+    ./libreoffice.nix
+    ./vscode.nix
   ];
 }
