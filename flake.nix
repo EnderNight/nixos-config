@@ -48,6 +48,13 @@
             ./hosts/Framework/configuration.nix
           ];
         };
+
+        MSI = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = homeConfig ++ [
+            ./hosts/MSI/configuration.nix
+          ];
+        };
       };
 
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
