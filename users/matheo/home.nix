@@ -11,8 +11,7 @@
   imports = [
     ../../modules/home/ssh.nix
 
-    ../../modules/home/firefox.nix
-    ../../modules/home/vlc.nix
+    ../../modules/home/applications
 
     ../../modules/home/kitty.nix
     ../../modules/home/fish.nix
@@ -24,6 +23,7 @@
     ../../modules/home/glow.nix
     ../../modules/home/ripgrep.nix
     ../../modules/home/fzf.nix
+    ../../modules/home/btop.nix
 
     ../../modules/home/git.nix
 
