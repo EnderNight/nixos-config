@@ -21,6 +21,8 @@
     ../../modules/home/bat.nix
     ../../modules/home/yazi.nix
     ../../modules/home/glow.nix
+    ../../modules/home/ripgrep.nix
+    ../../modules/home/fzf.nix
 
     ../../modules/home/git.nix
 
