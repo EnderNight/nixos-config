@@ -7,6 +7,8 @@
     ../../modules/system/ssh.nix
 
     ../../modules/system/fonts.nix
+
+    ../../modules/system/steam.nix
   ];
 
   users.users.matheo = {
