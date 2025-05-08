@@ -24,6 +24,7 @@
     ../../modules/home/ripgrep.nix
     ../../modules/home/fzf.nix
     ../../modules/home/btop.nix
+    ../../modules/home/direnv.nix
 
     ../../modules/home/git.nix
 
