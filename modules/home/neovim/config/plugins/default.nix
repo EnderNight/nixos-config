@@ -8,5 +8,6 @@
     ./noice.nix
     ./lualine.nix
     ./telescope.nix
+    ./cmp.nix
   ];
 }
