@@ -21,10 +21,10 @@
           "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' })";
         };
 
-	window = {
-	  completion.border = "rounded";
-	  documentation.border = "rounded";
-	};
+        window = {
+          completion.border = "rounded";
+          documentation.border = "rounded";
+        };
       };
     };
   };

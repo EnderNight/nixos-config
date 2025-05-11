@@ -14,6 +14,14 @@
       markdown_inline
       regex
       nix
+      python
+      dart
+      java
+      go
+      cpp
+      c_sharp
+      bash
+      fish
     ];
 
     settings = {
