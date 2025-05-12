@@ -12,9 +12,8 @@
     # ./blink-cmp.nix
     ./which-key.nix
     ./sleuth.nix
-
     ./lsp.nix
-
     ./conform-nvim.nix
+    ./gitsigns.nix
   ];
 }
