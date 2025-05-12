@@ -1,8 +1,19 @@
 { pkgs, ... }:
 
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    kernelPackages = pkgs.linuxPackages_zen;
+  };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   networking.networkmanager.enable = true;
 
