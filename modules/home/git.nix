@@ -8,5 +8,9 @@
     userName = "Ender";
 
     delta.enable = true;
+
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 }
