@@ -14,5 +14,7 @@
     ./obsidian.nix
     ./libreoffice.nix
     ./vscode.nix
+    ./google-chrome.nix
+    ./android-studio.nix
   ];
 }
