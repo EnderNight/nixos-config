@@ -57,6 +57,8 @@
     pulse.enable = true;
   };
 
+  services.udisks2.enable = true;
+
   programs.ssh.startAgent = true;
 
   # Do not delete or change this line

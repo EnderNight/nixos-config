@@ -123,6 +123,7 @@
     papirus-icon-theme
     kdePackages.qt6ct
     nerd-fonts.jetbrains-mono
+    libnotify
 
     ffmpeg
     p7zip
@@ -142,6 +143,8 @@
 
     prismlauncher
     ftb-app
+
+    inputs.pyback.packages.${stdenv.hostPlatform.system}.default
   ];
 
   home.pointerCursor = {

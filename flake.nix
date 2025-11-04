@@ -21,6 +21,11 @@
     };
 
     dotfiles.url = "github:EnderNight/dotfiles";
+
+    pyback = {
+      url = "github:EnderNight/pyback";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -32,6 +37,7 @@
       home-manager,
       caelestia-shell,
       dotfiles,
+      pyback,
       ...
     }:
     {
@@ -52,7 +58,7 @@
               useUserPackages = true;
               backupFileExtension = "backup";
 
-              extraSpecialArgs.inputs = inputs;
+              extraSpecialArgs = { inherit inputs; };
 
               users.matheo = ./home.nix;
             };
