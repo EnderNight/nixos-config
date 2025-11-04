@@ -15,8 +15,6 @@
   home.username = "matheo";
   home.homeDirectory = "/home/matheo";
 
-  home.shell.enableFishIntegration = true;
-
   programs.home-manager.enable = true;
 
   programs.neovim = {
@@ -125,6 +123,14 @@
     papirus-icon-theme
     kdePackages.qt6ct
     nerd-fonts.jetbrains-mono
+
+    ffmpeg
+    p7zip
+    poppler
+    ripgrep
+    fzf
+    resvg
+    imagemagick
 
     kdePackages.qtsvg
     kdePackages.qtimageformats

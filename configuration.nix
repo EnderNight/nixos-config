@@ -23,7 +23,10 @@
 
   users.users.matheo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
   };
 
   nix.settings.experimental-features = [
