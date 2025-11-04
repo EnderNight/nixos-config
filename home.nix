@@ -23,6 +23,10 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+
+    extraPackages = with pkgs; [
+      libgcc
+    ];
   };
 
   programs.vscode.enable = true;
@@ -96,6 +100,14 @@
   programs.distrobox.enable = true;
 
   home.packages = with pkgs; [
+    gcc
+    patchelf
+    clang-tools
+    lua
+    luarocks
+    lua-language-server
+    stylua
+
     fastfetch
     btop
 
@@ -130,6 +142,7 @@
     poppler
     ripgrep
     fzf
+    fd
     resvg
     imagemagick
 
