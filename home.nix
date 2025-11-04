@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -66,7 +71,7 @@
   };
 
   programs.firefox.enable = true;
-  
+
   programs.wofi.enable = true;
   programs.obs-studio.enable = true;
 
@@ -168,12 +173,12 @@
     configFile = {
       "caelestia" = {
         source = "${inputs.dotfiles}/caelestia";
-	recursive = true;
+        recursive = true;
       };
 
       "hypr" = {
         source = "${inputs.dotfiles}/hypr";
-	recursive = true;
+        recursive = true;
       };
 
       "starship.toml".source = "${inputs.dotfiles}/starship.toml";
