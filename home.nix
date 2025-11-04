@@ -153,6 +153,13 @@
 
     discord
     google-chrome
+    libreoffice-fresh
+    evince
+    file-roller
+    loupe
+    nautilus
+    papers
+    vlc
 
     prismlauncher
     ftb-app
@@ -180,18 +187,16 @@
 
     mimeApps = {
       enable = true;
-      defaultApplications = {
-        "x-scheme-handler/http" = [ "firefox.desktop" ];
-        "x-scheme-handler/https" = [ "firefox.desktop" ];
-        "x-scheme-handler/chrome" = [ "firefox.desktop" ];
-        "text/html" = [ "firefox.desktop" ];
-        "application/x-extension-htm" = [ "firefox.desktop" ];
-        "application/x-extension-html" = [ "firefox.desktop" ];
-        "application/x-extension-shtml" = [ "firefox.desktop" ];
-        "application/xhtml+xml" = [ "firefox.desktop" ];
-        "application/x-extension-xhtml" = [ "firefox.desktop" ];
-        "application/x-extension-xht" = [ "firefox.desktop" ];
-      };
+      defaultApplicationPackages = with pkgs; [
+        neovim
+        firefox
+        loupe
+        evince
+        libreoffice-fresh
+        file-roller
+        papers
+        vlc
+      ];
     };
 
     configFile = {
