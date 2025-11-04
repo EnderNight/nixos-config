@@ -1,0 +1,179 @@
+{ config, pkgs, inputs, ... }:
+
+{
+  imports = [
+    inputs.caelestia-shell.homeManagerModules.default
+  ];
+
+  home.stateVersion = "25.05";
+
+  home.username = "matheo";
+  home.homeDirectory = "/home/matheo";
+
+  home.shell.enableFishIntegration = true;
+
+  programs.home-manager.enable = true;
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+  };
+
+  programs.vscode.enable = true;
+
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+      fi
+    '';
+  };
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting
+    '';
+  };
+  programs.starship = {
+    enable = true;
+    enableTransience = true;
+  };
+  programs.zoxide.enable = true;
+  programs.eza = {
+    enable = true;
+    colors = "always";
+    icons = "always";
+    extraOptions = [
+      "--hyperlink"
+      "--group-directories-first"
+      "--smart-group"
+      "--header"
+    ];
+  };
+  programs.bat.enable = true;
+  programs.yazi.enable = true;
+
+  programs.kitty = {
+    enable = true;
+    themeFile = "OneDark-Pro";
+    font.name = "FiraCode Nerd Font";
+  };
+
+  programs.firefox.enable = true;
+  
+  programs.wofi.enable = true;
+  programs.obs-studio.enable = true;
+
+  programs.git = {
+    enable = true;
+    settings = {
+      init = {
+        defaultBranch = "main";
+      };
+      user = {
+        name = "Ender";
+        email = "ndxendernight@gmail.com";
+      };
+    };
+  };
+
+  programs.caelestia = {
+    enable = true;
+    systemd.enable = false;
+
+    cli.enable = true;
+  };
+
+  home.packages = with pkgs; [
+    fastfetch
+    btop
+
+    brightnessctl
+    playerctl
+
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    nerd-fonts.fira-code
+
+    nwg-look
+
+    hyprpaper
+    hyprpicker
+    hyprpolkitagent
+    hyprsysteminfo
+    wl-clipboard
+    cliphist
+    inotify-tools
+    app2unit
+    trash-cli
+    jq
+    adw-gtk3
+    papirus-icon-theme
+    kdePackages.qt6ct
+    nerd-fonts.jetbrains-mono
+
+    kdePackages.qtsvg
+    kdePackages.qtimageformats
+    kdePackages.qtmultimedia
+    kdePackages.qt5compat
+
+    discord
+    google-chrome
+
+    prismlauncher
+    ftb-app
+  ];
+
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+
+    hyprcursor.enable = true;
+  };
+
+  fonts.fontconfig.enable = true;
+
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" ];
+        "x-scheme-handler/chrome" = [ "firefox.desktop" ];
+        "text/html" = [ "firefox.desktop" ];
+        "application/x-extension-htm" = [ "firefox.desktop" ];
+        "application/x-extension-html" = [ "firefox.desktop" ];
+        "application/x-extension-shtml" = [ "firefox.desktop" ];
+        "application/xhtml+xml" = [ "firefox.desktop" ];
+        "application/x-extension-xhtml" = [ "firefox.desktop" ];
+        "application/x-extension-xht" = [ "firefox.desktop" ];
+      };
+    };
+
+    configFile = {
+      "hypr" = {
+        source = "${inputs.dotfiles}/hypr";
+	recursive = true;
+      };
+
+      "starship.toml".source = "${inputs.dotfiles}/starship.toml";
+
+      "fish/conf.d".source = "${inputs.dotfiles}/fish/conf.d";
+    };
+  };
+}
