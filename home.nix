@@ -95,6 +95,8 @@
     cli.enable = true;
   };
 
+  programs.distrobox.enable = true;
+
   home.packages = with pkgs; [
     fastfetch
     btop

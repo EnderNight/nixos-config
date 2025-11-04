@@ -23,7 +23,7 @@
 
   users.users.matheo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
   };
 
   nix.settings.experimental-features = [
@@ -39,6 +39,11 @@
   environment.systemPackages = with pkgs; [
     htop
   ];
+
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = false;
+  };
 
   programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

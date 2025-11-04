@@ -2,9 +2,6 @@
 
 ## TODO
 
-- ssh keys
-- config to github
-- git config
 - nvim config
 - better keybinds
     - Move/Resize windows
