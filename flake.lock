@@ -48,11 +48,11 @@
     },
     "dotfiles": {
       "locked": {
-        "lastModified": 1762220016,
-        "narHash": "sha256-fFShm+u4gusXAwpaZgWsxY9gEWMZSYkPtvnbBiGGxxw=",
+        "lastModified": 1762253124,
+        "narHash": "sha256-bl08TisnQCHsWEdMtTsx6NeAx+3ffqOYHRvwrW6ITWY=",
         "owner": "EnderNight",
         "repo": "dotfiles",
-        "rev": "4ebbb30fc112d8bc65c4be34a5aa786f9a2bc6d6",
+        "rev": "ec75e382fcf73349be122d894aaef5a4d4e1f0a7",
         "type": "github"
       },
       "original": {

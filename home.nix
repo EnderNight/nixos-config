@@ -166,6 +166,11 @@
     };
 
     configFile = {
+      "caelestia" = {
+        source = "${inputs.dotfiles}/caelestia";
+	recursive = true;
+      };
+
       "hypr" = {
         source = "${inputs.dotfiles}/hypr";
 	recursive = true;
