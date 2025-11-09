@@ -12,6 +12,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   networking.hostName = "nixos-framework";
   networking.networkmanager.enable = true;
@@ -59,6 +60,8 @@
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
+
+  services.power-profiles-daemon.enable = true;
 
   programs.ssh.startAgent = true;
 

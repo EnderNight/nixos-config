@@ -9,7 +9,6 @@
   imports = [
     inputs.caelestia-shell.homeManagerModules.default
   ];
-
   home.stateVersion = "25.05";
 
   home.username = "matheo";
@@ -70,6 +69,11 @@
     enable = true;
     themeFile = "OneDark-Pro";
     font.name = "FiraCode Nerd Font";
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.firefox.enable = true;
@@ -164,6 +168,11 @@
     prismlauncher
     ftb-app
 
+    zip
+    unzip
+
+    nil
+
     inputs.pyback.packages.${stdenv.hostPlatform.system}.default
   ];
 
@@ -212,7 +221,14 @@
 
       "starship.toml".source = "${inputs.dotfiles}/starship.toml";
 
-      "fish/conf.d".source = "${inputs.dotfiles}/fish/conf.d";
+      "fish/cond.d" = {
+        source = "${inputs.dotfiles}/fish/conf.d";
+        recursive = true;
+      };
+      "fish/functions" = {
+        source = "${inputs.dotfiles}/fish/functions";
+        recursive = true;
+      };
     };
   };
 }
