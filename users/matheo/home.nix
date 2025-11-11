@@ -28,10 +28,6 @@ in
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-
-    extraPackages = with pkgs; [
-      libgcc
-    ];
   };
 
   programs.vscode.enable = true;
@@ -232,6 +228,11 @@ in
       };
       "fish/functions" = {
         source = "${dotfiles}/fish/functions";
+        recursive = true;
+      };
+
+      "nvim" = {
+        source = "${dotfiles}/nvim";
         recursive = true;
       };
     };

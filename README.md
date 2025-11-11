@@ -9,6 +9,4 @@
     - Layouts
 - Wallpapers
 - Bluetooth
-- Power-profiles
 - Regional settings
-- pyback support
