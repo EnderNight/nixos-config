@@ -155,6 +155,7 @@ in
     kdePackages.qtimageformats
     kdePackages.qtmultimedia
     kdePackages.qt5compat
+    pavucontrol
 
     discord
     google-chrome

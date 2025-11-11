@@ -2,7 +2,6 @@
 
 ## TODO
 
-- nvim config
 - better keybinds
     - Move/Resize windows
     - Workspaces
@@ -10,3 +9,4 @@
 - Wallpapers
 - Bluetooth
 - Regional settings
+- Fork caelestia
