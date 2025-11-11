@@ -44,7 +44,12 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
-  programs.ssh.startAgent = true;
+  programs.ssh = {
+    startAgent = true;
+    extraConfig = ''
+    AddKeysToAgent yes
+    '';
+  };
 
   # Do not delete or change this line
   system.stateVersion = "25.05";
