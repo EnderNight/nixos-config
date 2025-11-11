@@ -226,7 +226,7 @@ in
 
       "starship.toml".source = "${dotfiles}/starship.toml";
 
-      "fish/cond.d" = {
+      "fish/conf.d" = {
         source = "${dotfiles}/fish/conf.d";
         recursive = true;
       };
