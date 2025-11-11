@@ -1,14 +1,20 @@
 {
-  config,
   pkgs,
   inputs,
   ...
 }:
 
+let
+  dotfiles = builtins.path {
+    path = ../../dotfiles;
+    name = "dotfiles";
+  };
+in
 {
   imports = [
     inputs.caelestia-shell.homeManagerModules.default
   ];
+
   home.stateVersion = "25.05";
 
   home.username = "matheo";
@@ -78,7 +84,6 @@
 
   programs.firefox.enable = true;
 
-  programs.wofi.enable = true;
   programs.obs-studio.enable = true;
 
   programs.git = {
@@ -210,23 +215,23 @@
 
     configFile = {
       "caelestia" = {
-        source = "${inputs.dotfiles}/caelestia";
+        source = "${dotfiles}/caelestia";
         recursive = true;
       };
 
       "hypr" = {
-        source = "${inputs.dotfiles}/hypr";
+        source = "${dotfiles}/hypr";
         recursive = true;
       };
 
-      "starship.toml".source = "${inputs.dotfiles}/starship.toml";
+      "starship.toml".source = "${dotfiles}/starship.toml";
 
       "fish/cond.d" = {
-        source = "${inputs.dotfiles}/fish/conf.d";
+        source = "${dotfiles}/fish/conf.d";
         recursive = true;
       };
       "fish/functions" = {
-        source = "${inputs.dotfiles}/fish/functions";
+        source = "${dotfiles}/fish/functions";
         recursive = true;
       };
     };

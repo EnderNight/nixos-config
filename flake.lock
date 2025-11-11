@@ -46,21 +46,6 @@
         "type": "github"
       }
     },
-    "dotfiles": {
-      "locked": {
-        "lastModified": 1762515387,
-        "narHash": "sha256-51uTPA7d82mSHfl/cXtrAshTnk8TRh+uGVpqrc3zGHc=",
-        "owner": "EnderNight",
-        "repo": "dotfiles",
-        "rev": "719f6d29dc5c0623366b736beb39881a22ad459b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "EnderNight",
-        "repo": "dotfiles",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -178,7 +163,6 @@
     "root": {
       "inputs": {
         "caelestia-shell": "caelestia-shell",
-        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",

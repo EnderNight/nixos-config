@@ -20,8 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dotfiles.url = "github:EnderNight/dotfiles";
-
     pyback = {
       url = "github:EnderNight/pyback";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,12 +30,7 @@
     inputs@{
       self,
       nixpkgs,
-      nixos-hardware,
       treefmt-nix,
-      home-manager,
-      caelestia-shell,
-      dotfiles,
-      pyback,
       ...
     }:
     {
@@ -45,25 +38,18 @@
         (treefmt-nix.lib.evalModule nixpkgs.legacyPackages."x86_64-linux" ./treefmt.nix)
         .config.build.wrapper;
 
-      nixosConfigurations.nixos-framework = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./configuration.nix
+      nixosConfigurations = {
+        nixos-framework = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/framework ];
+        };
 
-          nixos-hardware.nixosModules.framework-13th-gen-intel
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              backupFileExtension = "backup";
-
-              extraSpecialArgs = { inherit inputs; };
-
-              users.matheo = ./home.nix;
-            };
-          }
-        ];
+        nixos-msi = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/msi ];
+        };
       };
     };
 }
