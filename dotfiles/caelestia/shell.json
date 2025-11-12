@@ -1,0 +1,14 @@
+{
+  "bar": {
+    "clock": {
+      "showIcon": false
+    }
+  },
+  "paths": {
+    "sessionGif": ""
+  },
+  "services": {
+    "useFahrenheit": false,
+    "useTwelveHourClock": false
+  }
+}
