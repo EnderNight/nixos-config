@@ -175,6 +175,8 @@ in
 
     nil
 
+    file
+
     inputs.pyback.packages.${stdenv.hostPlatform.system}.default
   ];
 

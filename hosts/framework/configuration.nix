@@ -48,6 +48,16 @@
 
   programs.ssh.startAgent = true;
 
+  programs.steam.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vpl-gpu-rt
+    ];
+  };
+
   # Do not delete or change this line
   system.stateVersion = "25.05";
 }
