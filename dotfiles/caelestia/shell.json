@@ -1,4 +1,12 @@
 {
+  "general": {
+    "apps": {
+      "terminal": ["kitty"],
+      "audio": ["pavucontrol"],
+      "playback": ["mpv"],
+      "explorer": ["nautilus"]
+    }
+  },
   "bar": {
     "clock": {
       "showIcon": false
