@@ -24,6 +24,10 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    linux-manual
+    man-pages
+    man-pages-posix
+
     htop
   ];
 
@@ -50,12 +54,19 @@
 
   programs.steam.enable = true;
 
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vpl-gpu-rt
-    ];
+  hardware = {
+    graphics.enable = true;
+    intel-gpu-tools.enable = true;
+  };
+
+  documentation = {
+    dev.enable = true;
+    doc.enable = true;
+    info.enable = true;
+    man = {
+      enable = true;
+      generateCaches = true;
+    };
   };
 
   # Do not delete or change this line

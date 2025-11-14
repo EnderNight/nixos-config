@@ -22,6 +22,11 @@ in
 
   programs.home-manager.enable = true;
 
+  programs.man = {
+    enable = true;
+    generateCaches = true;
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -176,6 +181,11 @@ in
     nil
 
     file
+
+    gnumake
+    bear
+
+    nvtopPackages.intel
 
     inputs.pyback.packages.${stdenv.hostPlatform.system}.default
   ];
