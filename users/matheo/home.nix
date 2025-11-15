@@ -181,6 +181,8 @@
 
     nvtopPackages.intel
 
+    devenv
+
     inputs.pyback.packages.${stdenv.hostPlatform.system}.default
   ];
 

@@ -49,6 +49,8 @@
 
   services.power-profiles-daemon.enable = true;
 
+  services.thermald.enable = true;
+
   programs.ssh.startAgent = true;
 
   programs.steam.enable = true;
