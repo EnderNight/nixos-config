@@ -24,7 +24,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    linux-manual
     man-pages
     man-pages-posix
 
@@ -57,6 +56,14 @@
   hardware = {
     graphics.enable = true;
     intel-gpu-tools.enable = true;
+    bluetooth = {
+      enable = true;
+      settings = {
+        General = {
+          Expermental = true;
+        };
+      };
+    };
   };
 
   documentation = {
