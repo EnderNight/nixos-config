@@ -4,12 +4,6 @@
   ...
 }:
 
-let
-  dotfiles = builtins.path {
-    path = ../../dotfiles;
-    name = "dotfiles";
-  };
-in
 {
   imports = [
     inputs.caelestia-shell.homeManagerModules.default
@@ -224,28 +218,28 @@ in
 
     configFile = {
       "caelestia" = {
-        source = "${dotfiles}/caelestia";
+        source = ./configs/caelestia;
         recursive = true;
       };
 
       "hypr" = {
-        source = "${dotfiles}/hypr";
+        source = ./configs/hypr;
         recursive = true;
       };
 
-      "starship.toml".source = "${dotfiles}/starship.toml";
+      "starship.toml".source = ./configs/starship.toml;
 
       "fish/conf.d" = {
-        source = "${dotfiles}/fish/conf.d";
+        source = ./configs/fish/conf.d;
         recursive = true;
       };
       "fish/functions" = {
-        source = "${dotfiles}/fish/functions";
+        source = ./configs/fish/functions;
         recursive = true;
       };
 
       "nvim" = {
-        source = "${dotfiles}/nvim";
+        source = ./configs/nvim;
         recursive = true;
       };
     };

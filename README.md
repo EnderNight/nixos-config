@@ -2,11 +2,6 @@
 
 ## TODO
 
-- better keybinds
-    - Move/Resize windows
-    - Workspaces
-    - Layouts
-- Wallpapers
+- Hyprland Workspaces
+- Hyprland Layouts
 - Bluetooth
-- Regional settings
-- Fork caelestia
