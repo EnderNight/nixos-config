@@ -7,6 +7,8 @@
     inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
 
     inputs.home-manager.nixosModules.home-manager
+
+    ../../users/matheo/system.nix
   ];
 
   users.users.matheo = {
