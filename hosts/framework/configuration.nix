@@ -13,26 +13,37 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "us";
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nix.gc = {
-    automatic = true;
-    dates = "23:00";
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [
+        "root"
+        "matheo"
+      ];
+    };
+    gc = {
+      automatic = true;
+      dates = "23:00";
+    };
   };
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    man-pages
-    man-pages-posix
+    mesa-demos
 
     htop
   ];
 
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = false;
+  virtualisation = {
+    docker = {
+      enable = true;
+      enableOnBoot = false;
+    };
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
   };
 
   programs.hyprland.enable = true;
@@ -55,6 +66,12 @@
 
   programs.steam.enable = true;
 
+  programs.virt-manager.enable = true;
+
+  users.groups.libvirtd.members = [ "matheo" ];
+
+  programs.adb.enable = true;
+
   hardware = {
     graphics.enable = true;
     intel-gpu-tools.enable = true;
@@ -69,13 +86,7 @@
   };
 
   documentation = {
-    dev.enable = true;
-    doc.enable = true;
-    info.enable = true;
-    man = {
-      enable = true;
-      generateCaches = true;
-    };
+    man.generateCaches = false;
   };
 
   # Do not delete or change this line

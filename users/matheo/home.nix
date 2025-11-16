@@ -16,11 +16,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.man = {
-    enable = true;
-    generateCaches = true;
-  };
-
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -31,8 +26,13 @@
 
   programs.vscode.enable = true;
 
+  programs.man.generateCaches = false;
+
   programs.bash = {
     enable = true;
+    sessionVariables = {
+      CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
+    };
     initExtra = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
       then
@@ -43,6 +43,7 @@
   };
   programs.fish = {
     enable = true;
+    generateCompletions = false;
     interactiveShellInit = ''
       set fish_greeting
     '';
@@ -180,6 +181,8 @@
     bear
 
     nvtopPackages.intel
+
+    python3
 
     devenv
 

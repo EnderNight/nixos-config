@@ -16,6 +16,8 @@
     extraGroups = [
       "wheel"
       "docker"
+      "kvm"
+      "adbusers"
     ];
   };
 
