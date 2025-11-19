@@ -32,6 +32,9 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    man-pages
+    man-pages-posix
+
     mesa-demos
 
     htop
@@ -71,6 +74,10 @@
   users.groups.libvirtd.members = [ "matheo" ];
 
   programs.adb.enable = true;
+
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
+  };
 
   hardware = {
     graphics.enable = true;

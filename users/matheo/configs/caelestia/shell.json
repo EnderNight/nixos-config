@@ -7,11 +7,6 @@
       "explorer": ["nautilus"]
     }
   },
-  "bar": {
-    "clock": {
-      "showIcon": false
-    }
-  },
   "paths": {
     "sessionGif": ""
   },
