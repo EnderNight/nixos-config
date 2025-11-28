@@ -1,3 +1,3 @@
-function ltg --wraps='lt --git-ignore' --description 'alias ltg=lt --git-ignore'
-    lt --git-ignore $argv
+function ltg --wraps='lt --git-ignore -a' --description 'alias ltg=lt --git-ignore -a'
+    lt --git-ignore -a $argv
 end

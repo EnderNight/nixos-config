@@ -186,6 +186,8 @@
 
     devenv
 
+    glow
+
     inputs.pyback.packages.${stdenv.hostPlatform.system}.default
   ];
 

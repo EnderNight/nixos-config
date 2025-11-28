@@ -1,9 +1,16 @@
 { pkgs, ... }:
 
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    kernelPackages = pkgs.linuxPackages_zen;
+
+    tmp.cleanOnBoot = true;
+  };
 
   networking.hostName = "nixos-framework";
   networking.networkmanager.enable = true;
@@ -29,7 +36,13 @@
       dates = "23:00";
     };
   };
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    segger-jlink.acceptLicense = true;
+    permittedInsecurePackages = [
+      "segger-jlink-qt4-874"
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     man-pages
@@ -78,6 +91,11 @@
   services.logind.settings.Login = {
     HandlePowerKey = "suspend";
   };
+
+  # services.udev.packages = with pkgs; [
+  #   segger-jlink
+  #   nrf-udev
+  # ];
 
   hardware = {
     graphics.enable = true;
