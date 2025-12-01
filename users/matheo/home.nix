@@ -188,6 +188,8 @@
 
     glow
 
+    bitwarden-desktop
+
     inputs.pyback.packages.${stdenv.hostPlatform.system}.default
   ];
 
