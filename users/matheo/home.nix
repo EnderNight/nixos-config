@@ -190,6 +190,8 @@
 
     bitwarden-desktop
 
+    wget
+
     inputs.pyback.packages.${stdenv.hostPlatform.system}.default
   ];
 

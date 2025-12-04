@@ -10,6 +10,7 @@ return {
       clangd = {},
       nil_ls = {},
       ada_language_server = {},
+      pyright = {},
     },
   },
   config = function(_, opts)
