@@ -40,17 +40,17 @@
         .config.build.wrapper;
 
       nixosConfigurations = {
-        nixos-framework = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+
+        framework = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [ ./hosts/framework ];
         };
 
-        nixos-msi = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+        msi = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [ ./hosts/msi ];
         };
+
       };
     };
 }
