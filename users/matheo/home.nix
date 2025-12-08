@@ -1,46 +1,19 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
-
+{ inputs, pkgs, ... }:
 {
   imports = [
+    ./modules/neovim.nix
+    ./modules/vscode.nix
+
+    ./modules/bash.nix
+
     inputs.caelestia-shell.homeManagerModules.default
   ];
-
-  home.stateVersion = "25.05";
 
   home.username = "matheo";
   home.homeDirectory = "/home/matheo";
 
   programs.home-manager.enable = true;
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-  };
-
-  programs.vscode.enable = true;
-
-  programs.man.generateCaches = false;
-
-  programs.bash = {
-    enable = true;
-    sessionVariables = {
-      CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
-    };
-    initExtra = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
-    '';
-  };
   programs.fish = {
     enable = true;
     generateCompletions = false;
@@ -105,13 +78,8 @@
   programs.distrobox.enable = true;
 
   home.packages = with pkgs; [
-    gcc
     patchelf
     clang-tools
-    lua
-    luarocks
-    lua-language-server
-    stylua
 
     fastfetch
     btop
@@ -229,30 +197,27 @@
 
     configFile = {
       "caelestia" = {
-        source = ./configs/caelestia;
+        source = ./dotfiles/caelestia;
         recursive = true;
       };
 
       "hypr" = {
-        source = ./configs/hypr;
+        source = ./dotfiles/hypr;
         recursive = true;
       };
 
-      "starship.toml".source = ./configs/starship.toml;
+      "starship.toml".source = ./dotfiles/starship.toml;
 
       "fish/conf.d" = {
-        source = ./configs/fish/conf.d;
+        source = ./dotfiles/fish/conf.d;
         recursive = true;
       };
       "fish/functions" = {
-        source = ./configs/fish/functions;
-        recursive = true;
-      };
-
-      "nvim" = {
-        source = ./configs/nvim;
+        source = ./dotfiles/fish/functions;
         recursive = true;
       };
     };
   };
+
+  home.stateVersion = "25.05";
 }

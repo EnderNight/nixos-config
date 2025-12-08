@@ -5,6 +5,9 @@
     extraGroups = [
       "wheel"
       "docker"
+      "kvm"
+      "adbusers"
+      "libvirtd"
     ];
   };
 

@@ -1,33 +1,57 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
-    ./configuration.nix
-    ./hardware-configuration.nix
-
     inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
 
-    inputs.home-manager.nixosModules.home-manager
+    ./hardware-configuration.nix
+
+    ../../modules/system/base.nix
+    ../../modules/system/home-manager.nix
+    ../../modules/system/region.nix
+    ../../modules/system/nix.nix
+
+    ../../modules/system/bluetooth.nix
+
+    ../../modules/system/networkmanager.nix
+    ../../modules/system/docker.nix
+    ../../modules/system/ssh.nix
+    ../../modules/system/steam.nix
+    ../../modules/system/adb.nix
+
+    ../../modules/system/services/pipewire.nix
+    ../../modules/system/services/udisks2.nix
+    ../../modules/system/services/gvfs.nix
+    ../../modules/system/services/power-profiles-daemon.nix
+    ../../modules/system/services/thermald.nix
+
+    ../../modules/system/hyprland.nix
 
     ../../users/matheo/system.nix
   ];
 
-  users.users.matheo = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "docker"
-      "kvm"
-      "adbusers"
-    ];
+  networking.hostName = "framework";
+
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    kernelPackages = pkgs.linuxPackages_zen;
+
+    tmp.cleanOnBoot = true;
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "backup";
+  console.keyMap = "us";
 
-    extraSpecialArgs = { inherit inputs; };
-
-    users.matheo = ../../users/matheo/home.nix;
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
   };
+
+  hardware = {
+    graphics.enable = true;
+    intel-gpu-tools.enable = true;
+  };
+
+  system.stateVersion = "25.05";
 }
