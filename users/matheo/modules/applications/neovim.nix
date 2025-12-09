@@ -18,10 +18,15 @@
     nerd-fonts.fira-code
   ];
 
-  xdg.configFile = {
-    "nvim" = {
-      source = ../dotfiles/nvim;
-      recursive = true;
+  xdg = {
+    configFile = {
+      "nvim" = {
+        source = ../../dotfiles/nvim;
+        recursive = true;
+      };
     };
+    mimeApps.defaultApplicationPackages = with pkgs; [
+      neovim
+    ];
   };
 }
