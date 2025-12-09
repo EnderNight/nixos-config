@@ -29,6 +29,7 @@
     ../../modules/system/hyprland.nix
 
     ../../users/matheo/system.nix
+    ../../users/matheo/hosts/msi
   ];
 
   networking.hostName = "msi";
