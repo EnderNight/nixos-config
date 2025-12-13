@@ -1,14 +1,14 @@
 { ... }:
 {
   imports = [
-    ../../home-modules/shell
+    ../../home-modules/shells/fish.nix
+    ../../home-modules/shells/starship.nix
 
-    ../../home-modules/clis
+    ../../home-modules/clis/all.nix
 
-    ../../home-modules/de
-    ../../home-modules/de/hyprland
+    ../../home-modules/desktop-environments/hyprland
 
-    ../../home-modules/applications
+    ../../home-modules/applications/all.nix
 
     ../../home-modules/todo.nix
   ];

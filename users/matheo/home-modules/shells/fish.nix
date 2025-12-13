@@ -1,5 +1,12 @@
 { pkgs, ... }:
 {
+  programs.fish = {
+    enable = true;
+    generateCompletions = false;
+    interactiveShellInit = ''
+      set fish_greeting
+    '';
+  };
   programs.bash = {
     enable = true;
     sessionVariables = {
@@ -12,5 +19,16 @@
         exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
       fi
     '';
+  };
+
+  xdg.configFile = {
+    "fish/conf.d" = {
+      source = ../../dotfiles/fish/conf.d;
+      recursive = true;
+    };
+    "fish/functions" = {
+      source = ../../dotfiles/fish/functions;
+      recursive = true;
+    };
   };
 }
