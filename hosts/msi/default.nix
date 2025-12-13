@@ -9,26 +9,25 @@
 
     ./hardware-configuration.nix
 
-    ../../modules/system/base.nix
-    ../../modules/system/home-manager.nix
-    ../../modules/system/region.nix
-    ../../modules/system/nix.nix
+    ../../modules/base.nix
+    ../../modules/home-manager.nix
+    ../../modules/region.nix
+    ../../modules/nix.nix
 
-    ../../modules/system/bluetooth.nix
+    ../../modules/bluetooth.nix
 
-    ../../modules/system/networkmanager.nix
-    ../../modules/system/docker.nix
-    ../../modules/system/ssh.nix
-    ../../modules/system/steam.nix
-    ../../modules/system/adb.nix
+    ../../modules/networkmanager.nix
+    ../../modules/docker.nix
+    ../../modules/ssh.nix
+    ../../modules/steam.nix
+    ../../modules/adb.nix
 
-    ../../modules/system/services/pipewire.nix
-    ../../modules/system/services/udisks2.nix
-    ../../modules/system/services/gvfs.nix
+    ../../modules/services/pipewire.nix
+    ../../modules/services/udisks2.nix
+    ../../modules/services/gvfs.nix
 
-    ../../modules/system/hyprland.nix
+    ../../modules/hyprland.nix
 
-    ../../users/matheo/system.nix
     ../../users/matheo/hosts/msi
   ];
 

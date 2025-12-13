@@ -51,6 +51,11 @@
           modules = [ ./hosts/msi ];
         };
 
+        thinkpad = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/thinkpad ];
+        };
+
       };
     };
 }
