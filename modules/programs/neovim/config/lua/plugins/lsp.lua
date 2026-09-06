@@ -1,17 +1,19 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      local servers = {
-        "lua_ls",
-        "clangd",
-        "nil_ls",
-        "ocamllsp",
-      }
-
-      for _, s in ipairs(servers) do
-        -- vim.lsp.config(s, ...)
-        vim.lsp.enable(s)
+    opts = {
+      servers = {
+        lua_ls = {},
+        clangd = {},
+        nil_ls = {},
+        ocamllsp = {},
+      },
+    },
+    config = function(_, opts)
+      local names = vim.tbl_keys(opts.servers) ---@type string[]
+      for _, n in ipairs(names) do
+        vim.lsp.config(n, opts.servers[n])
+        vim.lsp.enable(n)
       end
     end,
   },
